@@ -11,12 +11,17 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    concurrency:
-      group: "pages"
-      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
-      
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.1'
+
+      - name: Generate SUMMARY.md with Go
+        run: go run generate_summary.go
+
       - name: Install mdBook
         run: |
           curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.37/mdbook-v0.4.37-x86_64-unknown-linux-gnu.tar.gz | tar -xz
@@ -24,9 +29,6 @@ jobs:
           
       - name: Build Book
         run: mdbook build
-        
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
         
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
