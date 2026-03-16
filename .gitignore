@@ -1,8 +1,5 @@
-# Ignorar archivos temporales de Obsidian y del sistema
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/cache/
+Roadmap.md
 
-# Ignorar archivos del sistema operativo
-.DS_Store
-Thumbs.db
