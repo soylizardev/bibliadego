@@ -1,3 +1,5 @@
+# Funciones y retornos Multiples
+
 En Go, las funciones son "ciudadanos de primera clase" (_First-class citizens_). Esto significa que pueden ser asignadas a variables, pasadas como argumentos y retornadas por otras funciones.
 
 ## 1. Anatomía de una Función

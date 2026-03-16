@@ -1,3 +1,5 @@
+# Salida Formateada
+
 ## (`fmt.Printf`)
 
 A diferencia de `Println`, **`Printf`** (Print Formatted) nos permite usar **verbos** (especificadores) para controlar exactamente cómo se ven los datos.

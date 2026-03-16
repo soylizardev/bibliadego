@@ -1,3 +1,5 @@
+# Estructuras de control
+
 Las estructuras de control permiten dirigir el flujo de ejecución. En Go, la sintaxis es limpia: **no se usan paréntesis** en las condiciones, pero las llaves `{ }` son obligatorias.
 
 ---

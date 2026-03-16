@@ -1,3 +1,5 @@
+# Embedding vs Herencia
+
 En Go, aunque puedes hacer cosas que _parecen_ POO, el paradigma se define oficialmente como **Programación Orientada a la Composición** (o simplemente un lenguaje **basado en tipos y composición**).
 
 En Go, el concepto de **Herencia** (propio de Java/C++) no existe. En su lugar, utilizamos **Embedding** (Incrustación), que es la implementación práctica del principio: _"Prefiere la composición sobre la herencia"_.

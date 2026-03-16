@@ -1,3 +1,5 @@
+# Manejo de errores y Control de Flujo
+
 En Go, el manejo de errores es **explícito**. No existen las excepciones (`try-catch`) como en Java. Esto nos obliga a tratar los errores como parte de la lógica de negocio, lo que hace que el software de backend sea extremadamente robusto y predecible.
 
 ## 1. El Patrón Estándar: `if err != nil`

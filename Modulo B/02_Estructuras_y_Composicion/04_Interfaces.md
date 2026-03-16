@@ -1,3 +1,5 @@
+# Interfaces
+
 Las interfaces nos permiten escribir código más flexible y re-utilizable sin depender de tipos en específicos. En Go, las **Interfaces** definen el **comportamiento** de un objeto. A diferencia de Java, no usas la palabra `implements`. Si un struct tiene los métodos que pide la interfaz, la implementa automáticamente (**Duck Typing**).
 
 > _"Si camina como pato y grazna como pato, entonces es un pato"._

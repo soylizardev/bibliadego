@@ -1,3 +1,5 @@
+# Punteros y Memoria
+
 ### 1. ¿Qué es un Puntero?
 
 Normalmente, una variable guarda un **valor** (como el número `25`). Un puntero, en cambio, guarda la **dirección de memoria** donde está ese valor.

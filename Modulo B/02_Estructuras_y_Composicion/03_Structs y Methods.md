@@ -1,3 +1,5 @@
+# Structs y Methods
+
 En Go no hay clases. Usamos **Structs** para agrupar datos y **Methods** para añadirles comportamiento.
 
 ## 1. Definición de un Struct

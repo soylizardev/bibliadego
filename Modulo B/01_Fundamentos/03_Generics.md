@@ -1,3 +1,5 @@
+# Generics
+
 Los **Generics** nos permiten escribir funciones y estructuras de datos que pueden trabajar con múltiples tipos sin sacrificar la seguridad del tipado. Evitan la duplicación de código ("Don't Repeat Yourself" - DRY).
 
 ---

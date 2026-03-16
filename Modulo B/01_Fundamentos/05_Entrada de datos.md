@@ -1,3 +1,5 @@
+# Entrada de datos (Scan)
+
 En Go, pedir datos al usuario requiere entender cómo se comporta el **Buffer** (la memoria temporal donde se guarda lo que tecleas).
 
 ## 1. La Familia `fmt` (Lectura básica)

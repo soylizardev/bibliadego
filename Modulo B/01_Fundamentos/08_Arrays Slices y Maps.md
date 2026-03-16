@@ -1,4 +1,5 @@
-Take
+# Arrays, Slices y Maps
+
 Esta nota cubre los fundamentos de la gestión de colecciones de datos en Go, enfocada en el **Módulo B.1** de nuestra Biblia de Estudio.
 
 # SECCIÓN 1: ARRAYS (Arreglos Estáticos)

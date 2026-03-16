@@ -1,3 +1,5 @@
+# Sintaxis Tipado y Operadores
+
 Go es un lenguaje **estáticamente tipado**, lo que significa que el compilador sabe el tipo de cada variable. Sin embargo, su sintaxis es limpia y evita la verbosidad de lenguajes como Java.
 
 ---
