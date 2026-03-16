@@ -1,25 +1,30 @@
 # 🐹 Biblia de Go (Golang)
 > Un recurso exhaustivo para dominar el lenguaje Go, desde los fundamentos hasta el alto rendimiento.
 
-Este repositorio es mi "bóveda" personal de conocimiento sobre **Go**, creada y organizada totalmente en **Obsidian** y publicada automáticamente con **mdBook**.
+Este repositorio es mi "bóveda" personal de conocimiento sobre **Go**, creada y organizada totalmente en **Obsidian**.
 
 ---
 
 ## 📚 Índice del Libro
 
-### 🛠️ Módulo B: Fundamentos y Estructuras
-* [Módulo B: Índice](<Modulo B/01_Fundamentos/00_Indice Fundamentos.md>)
-* [Sintaxis, Tipado y Operadores](<Modulo B/01_Fundamentos/01_Sintaxis, Tipado y Operadores.md>)
-* [Generics](<Modulo B/01_Fundamentos/03_Generics.md>)
-* [Punteros y Memoria](<Modulo B/01_Fundamentos/07_Punteros y Memoria (Valor vs Referencia).md>)
+### 🛠️ Módulo B: Fundamentos
+* [Módulo B: Índice](Modulo%20B/01_Fundamentos/00_Indice%20Fundamentos.md)
+* [Sintaxis, Tipado y Operadores](Modulo%20B/01_Fundamentos/01_Sintaxis%2C%20Tipado%20y%20Operadores.md)
+* [Custom Types](Modulo%20B/01_Fundamentos/02_Custom%20Types.md)
+* [Generics](Modulo%20B/01_Fundamentos/03_Generics.md)
+* [Salida Formateada](Modulo%20B/01_Fundamentos/04_Salida%20Formateada.md)
+* [Entrada de datos (inputs)](Modulo%20B/01_Fundamentos/05_Entrada%20de%20datos%20%28inputs%29.md)
+* [Estructuras de Control](Modulo%20B/01_Fundamentos/06_Estructuras%20de%20Control.md)
+* [Punteros y Memoria (Valor vs Referencia)](Modulo%20B/01_Fundamentos/07_Punteros%20y%20Memoria%20%28Valor%20vs%20Referencia%29.md)
+* [Arrays, Slices y Maps](Modulo%20B/01_Fundamentos/08_Arrays%2C%20Slices%20y%20Maps.md)
 
 ### 🏗️ Estructuras y Composición
-* [Índice de Estructuras](<Modulo B/02_Estructuras_y_Composicion/00_Indice Estructuras y Composicion.md>)
-* [Funciones y Retornos Múltiples](<Modulo B/02_Estructuras_y_Composicion/01_Funciones y Retornos Multiples.md>)
-* [Manejo de Errores](<Modulo B/02_Estructuras_y_Composicion/02_Manejo de Errores y Control de Flujo.md>)
-* [Structs y Methods](<Modulo B/02_Estructuras_y_Composicion/03_Structs y Methods.md>)
-* [Interfaces](<Modulo B/02_Estructuras_y_Composicion/04_Interfaces.md>)
-* [Embedding vs Herencia](<Modulo B/02_Estructuras_y_Composicion/05_Embedding vs Herencia.md>)
+* [Índice de Estructuras](Modulo%20B/02_Estructuras_y_Composici%C3%B3n/00_Indice%20Estructuras%20y%20Composici%C3%B3n.md)
+* [Funciones y Retornos Múltiples](Modulo%20B/02_Estructuras_y_Composici%C3%B3n/01_Funciones%20y%20Retornos%20M%C3%BAltiples.md)
+* [Manejo de Errores y Control de Flujo](Modulo%20B/02_Estructuras_y_Composici%C3%B3n/02_Manejo%20de%20Errores%20y%20Control%20de%20Flujo.md)
+* [Structs y Methods](Modulo%20B/02_Estructuras_y_Composici%C3%B3n/03_Structs%20y%20Methods.md)
+* [Interfaces](Modulo%20B/02_Estructuras_y_Composici%C3%B3n/04_Interfaces.md)
+* [Embedding vs Herencia](Modulo%20B/02_Estructuras_y_Composici%C3%B3n/05_Embedding%20vs%20Herencia.md)
 
 ---
 
