@@ -1,0 +1,10 @@
+[book]
+authors = ["soylizardev"]
+language = "es"
+multilingual = false
+src = "." # Esto le dice que tus notas están en la raíz
+title = "Biblia de Go"
+
+[output.html]
+git-repository-url = "https://github.com/soylizardev/bibliadego"
+edit-url-template = "https://github.com/soylizardev/bibliadego/edit/main/{path}"
