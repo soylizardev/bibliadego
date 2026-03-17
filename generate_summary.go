@@ -9,18 +9,26 @@ import (
 )
 
 func main() {
-	var sb strings.Builder
-	sb.WriteString("# Summary\n\n[Introducción](README.md)\n\n")
+	// --- Lógica para el SUMMARY.md ---
+	var sbSummary strings.Builder
+	sbSummary.WriteString("# Summary\n\n[Introducción](README.md)\n\n")
 
-	// 1. Obtener y ordenar los módulos (Carpetas que empiezan con "Modulo")
+	// --- Lógica para el README.md ---
+	var sbReadme strings.Builder
+	sbReadme.WriteString("# 🐹 Biblia de Go (Golang)\n")
+	sbReadme.WriteString("> Un recurso exhaustivo para dominar el lenguaje Go, desde los fundamentos hasta el alto rendimiento.\n\n")
+	sbReadme.WriteString("Este repositorio se actualiza automáticamente. ¡No edites el índice manualmente!\n\n")
+	sbReadme.WriteString("## 📚 Índice del Libro\n\n")
+
 	modules, _ := filepath.Glob("Modulo*")
 	sort.Strings(modules)
 
 	for _, mod := range modules {
 		modName := strings.ReplaceAll(mod, "_", " ")
-		sb.WriteString(fmt.Sprintf("- [%s]()\n", modName))
+		line := fmt.Sprintf("### 📂 [%s]()\n", modName)
+		sbSummary.WriteString("- " + line)
+		sbReadme.WriteString(line)
 
-		// 2. Obtener y ordenar subcarpetas (ej: 01_Fundamentos)
 		subDirs, _ := os.ReadDir(mod)
 		for _, sub := range subDirs {
 			if sub.IsDir() {
@@ -29,42 +37,45 @@ func main() {
 				if idx := strings.Index(cleanSub, "_"); idx != -1 {
 					cleanSub = cleanSub[idx+1:]
 				}
-				sb.WriteString(fmt.Sprintf("    - [%s]()\n", cleanSub))
 
-				// 3. Obtener y ordenar archivos .md
+				sbSummary.WriteString(fmt.Sprintf("    - [%s]()\n", cleanSub))
+				sbReadme.WriteString(fmt.Sprintf("* **%s**\n", cleanSub))
+
 				files, _ := os.ReadDir(subPath)
 				for _, file := range files {
 					if !file.IsDir() && strings.HasSuffix(file.Name(), ".md") && !strings.HasPrefix(file.Name(), "00_") {
 						filePath := filepath.Join(subPath, file.Name())
-
-						// Limpiar nombre para el menú
 						fileName := strings.TrimSuffix(file.Name(), ".md")
 						if idx := strings.Index(fileName, "_"); idx != -1 {
 							fileName = fileName[idx+1:]
 						}
 
-						// Codificar ruta para URL (reemplazar espacios)
 						webPath := strings.ReplaceAll(filePath, " ", "%20")
 						webPath = strings.ReplaceAll(webPath, "\\", "/")
 
-						sb.WriteString(fmt.Sprintf("        - [%s](%s)\n", fileName, webPath))
+						sbSummary.WriteString(fmt.Sprintf("        - [%s](%s)\n", fileName, webPath))
+						sbReadme.WriteString(fmt.Sprintf("  - [%s](%s)\n", fileName, webPath))
 					}
 				}
+				sbReadme.WriteString("\n")
 			}
 		}
 	}
 
-	// 4. Agregar Roadmap si existe
+	// Roadmap
 	if _, err := os.Stat("Roadmap Go Backend High Performance.md"); err == nil {
 		path := strings.ReplaceAll("Roadmap Go Backend High Performance.md", " ", "%20")
-		sb.WriteString(fmt.Sprintf("\n- [Roadmap](%s)\n", path))
+		sbSummary.WriteString(fmt.Sprintf("\n- [Roadmap](%s)\n", path))
+		sbReadme.WriteString(fmt.Sprintf("### 🚀 [Roadmap](%s)\n", path))
 	}
 
-	// Escribir el archivo
-	err := os.WriteFile("SUMMARY.md", []byte(sb.String()), 0644)
-	if err != nil {
-		fmt.Println("Error escribiendo SUMMARY.md:", err)
-		return
-	}
-	fmt.Println("SUMMARY.md generado exitosamente con Go.")
+	// Footer del README
+	sbReadme.WriteString("\n---\n## 🌐 Ver como Libro Web\n")
+	sbReadme.WriteString("👉 **[https://soylizardev.github.io/bibliadego/](https://soylizardev.github.io/bibliadego/)**\n")
+
+	// Escribir ambos archivos
+	os.WriteFile("SUMMARY.md", []byte(sbSummary.String()), 0644)
+	os.WriteFile("README.md", []byte(sbReadme.String()), 0644)
+
+	fmt.Println("::notice title=Generador::README.md y SUMMARY.md actualizados 🐹")
 }
