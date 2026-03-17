@@ -2,4 +2,7 @@
 .obsidian/workspace-mobile.json
 .obsidian/cache/
 Roadmap.md
-
+.obsidian/
+! .obsidian/appearance.json
+! .obsidian/hotkeys.json
+book/
