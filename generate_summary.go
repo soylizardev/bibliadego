@@ -9,37 +9,39 @@ import (
 )
 
 func main() {
-	// --- Lógica para el SUMMARY.md ---
 	var sbSummary strings.Builder
-	sbSummary.WriteString("# Summary\n\n[Introducción](README.md)\n\n")
-
-	// --- Lógica para el README.md ---
 	var sbReadme strings.Builder
+
+	// Configuración inicial
+	sbSummary.WriteString("# Summary\n\n[Introducción](README.md)\n\n")
 	sbReadme.WriteString("# 🐹 Biblia de Go (Golang)\n")
-	sbReadme.WriteString("> Un recurso exhaustivo para dominar el lenguaje Go, desde los fundamentos hasta el alto rendimiento.\n\n")
-	sbReadme.WriteString("Este repositorio se actualiza automáticamente. ¡No edites el índice manualmente!\n\n")
-	sbReadme.WriteString("## 📚 Índice del Libro\n\n")
+	sbReadme.WriteString("> Un recurso de alto rendimiento. *Actualizado automáticamente por el Robot Gopher.*\n\n")
+	sbReadme.WriteString("## 📚 Índice del Contenido\n\n")
 
 	modules, _ := filepath.Glob("Modulo*")
 	sort.Strings(modules)
 
 	for _, mod := range modules {
-		modName := strings.ReplaceAll(mod, "_", " ")
-		line := fmt.Sprintf("### 📂 [%s]()\n", modName)
-		sbSummary.WriteString("- " + line)
-		sbReadme.WriteString(line)
+		modClean := strings.ReplaceAll(mod, "_", " ")
+
+		// SUMMARY: Lista simple sin ###
+		sbSummary.WriteString(fmt.Sprintf("- [%s]()\n", modClean))
+		// README: Aquí sí usamos ### para que se vea bien en GitHub
+		sbReadme.WriteString(fmt.Sprintf("### 📂 %s\n", modClean))
 
 		subDirs, _ := os.ReadDir(mod)
 		for _, sub := range subDirs {
 			if sub.IsDir() {
 				subPath := filepath.Join(mod, sub.Name())
-				cleanSub := sub.Name()
-				if idx := strings.Index(cleanSub, "_"); idx != -1 {
-					cleanSub = cleanSub[idx+1:]
+				subClean := sub.Name()
+				if idx := strings.Index(subClean, "_"); idx != -1 {
+					subClean = subClean[idx+1:]
 				}
 
-				sbSummary.WriteString(fmt.Sprintf("    - [%s]()\n", cleanSub))
-				sbReadme.WriteString(fmt.Sprintf("* **%s**\n", cleanSub))
+				// SUMMARY: Sangría de 4 espacios
+				sbSummary.WriteString(fmt.Sprintf("    - [%s]()\n", subClean))
+				// README: Negrita para subcategorías
+				sbReadme.WriteString(fmt.Sprintf("* **%s**\n", subClean))
 
 				files, _ := os.ReadDir(subPath)
 				for _, file := range files {
@@ -53,7 +55,9 @@ func main() {
 						webPath := strings.ReplaceAll(filePath, " ", "%20")
 						webPath = strings.ReplaceAll(webPath, "\\", "/")
 
+						// SUMMARY: Sangría de 8 espacios y enlace
 						sbSummary.WriteString(fmt.Sprintf("        - [%s](%s)\n", fileName, webPath))
+						// README: Lista con enlace
 						sbReadme.WriteString(fmt.Sprintf("  - [%s](%s)\n", fileName, webPath))
 					}
 				}
@@ -69,13 +73,9 @@ func main() {
 		sbReadme.WriteString(fmt.Sprintf("### 🚀 [Roadmap](%s)\n", path))
 	}
 
-	// Footer del README
-	sbReadme.WriteString("\n---\n## 🌐 Ver como Libro Web\n")
-	sbReadme.WriteString("👉 **[https://soylizardev.github.io/bibliadego/](https://soylizardev.github.io/bibliadego/)**\n")
+	sbReadme.WriteString("\n---\n## 🌐 Ver como Libro Web\n👉 **[https://soylizardev.github.io/bibliadego/](https://soylizardev.github.io/bibliadego/)**\n")
 
-	// Escribir ambos archivos
 	os.WriteFile("SUMMARY.md", []byte(sbSummary.String()), 0644)
 	os.WriteFile("README.md", []byte(sbReadme.String()), 0644)
-
-	fmt.Println("::notice title=Generador::README.md y SUMMARY.md actualizados 🐹")
+	fmt.Println("::notice title=Generador::Archivos actualizados con formato compatible.")
 }
