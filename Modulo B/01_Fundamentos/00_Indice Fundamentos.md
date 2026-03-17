@@ -1,4 +1,8 @@
-> **Módulo:** B.1 del Roadmap **Objetivo:** Dominar la sintaxis básica y la gestión de memoria antes de pasar a arquitectura.
+> **Módulo:** B.1 del Roadmap 
+
+---
+
+**Objetivo:** Dominar la sintaxis básica y la gestión de memoria antes de pasar a arquitectura.
 
 ## 📝 Notas de Estudio
 
