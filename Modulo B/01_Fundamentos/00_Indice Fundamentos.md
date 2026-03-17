@@ -6,7 +6,7 @@
 
 ## 📝 Notas de Estudio
 
-- [[01_Sintaxis, Tipado y Operadores]]
+- [[01_Sintaxis Tipado y Operadores]]
     
 - [[02_Custom Types]]
     
@@ -14,10 +14,12 @@
     
 - [[04_Salida Formateada]]
     
-- [[05_ Entrada de datos (inputs)]]
+- [[05_Entrada de datos]]
     
-- [[06_Estructuras de Control]]
+- [[06_Conversion de datos]]
     
-- [[07_Punteros y Memoria (Valor vs Referencia)]]
+- [[07_Estructuras de Control]]
     
-- [[08_Arrays, Slices y Maps]]
+- [[08_Punteros y Memoria]]
+    
+- [[09_Arrays Slices y Maps]]

@@ -2,7 +2,7 @@
 
 ## 📝 Notas de Estudio
 
-- [[01_Funciones y Retornos Múltiples]]
+- [[01_Funciones y Retornos Multiples]]
     
 - [[02_Manejo de Errores y Control de Flujo]]
     

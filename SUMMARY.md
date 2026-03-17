@@ -8,9 +8,9 @@
     - [Generics](Modulo%20B/01_Fundamentos/03_Generics.md)
     - [Salida Formateada](Modulo%20B/01_Fundamentos/04_Salida%20Formateada.md)
     - [Entrada de datos](Modulo%20B/01_Fundamentos/05_Entrada%20de%20datos.md)
-    - [Estructuras de Control](Modulo%20B/01_Fundamentos/06_Estructuras%20de%20Control.md)
-    - [Punteros y Memoria](Modulo%20B/01_Fundamentos/07_Punteros%20y%20Memoria.md)
-    - [Arrays, Slices y Maps](Modulo%20B/01_Fundamentos/08_Arrays%20Slices%20y%20Maps.md)
+    - [Estructuras de Control](07_Estructuras%20de%20Control.md)
+    - [Punteros y Memoria](08_Punteros%20y%20Memoria.md)
+    - [Arrays, Slices y Maps](09_Arrays%20Slices%20y%20Maps.md)
 
 - [Estructuras y Composición](Modulo%20B/02_Estructuras_y_Composicion/00_Indice%20Estructuras%20y%20Composicion.md)
     - [Funciones y Retornos](Modulo%20B/02_Estructuras_y_Composicion/01_Funciones%20y%20Retornos%20Multiples.md)
